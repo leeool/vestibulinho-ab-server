@@ -12,8 +12,8 @@ class BlogPost {
   @Column({ nullable: false, type: "varchar" })
   imageUrl: string
 
-  @Column({ nullable: false, type: "text" })
-  content: string
+  @Column({ nullable: false, type: "text", array: true })
+  content: string[]
 
   @Column({ type: "int", default: 0 })
   likes: number

@@ -9,6 +9,9 @@ router.get("/", (req, res) => {
 })
 
 router.get("/blog-post", blogPostController.index)
+router.post("/blog-post", blogPostController.store)
+router.put("/blog-post/:id", blogPostController.update)
+router.delete("/blog-post/:id", blogPostController.delete)
 
 
 export default router
