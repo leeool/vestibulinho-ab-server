@@ -11,6 +11,9 @@ const AppDataSource = new DataSource({
   database: process.env.DB_DATABASE,
   entities: [__dirname + "/**/entities/*.{js,ts}"],
   migrations: [__dirname + "/**/migrations/*.{js,ts}"],
+  ssl: {
+    rejectUnauthorized: false,
+  }
 })
 
 export default AppDataSource
