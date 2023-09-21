@@ -44,6 +44,14 @@ class BlogPostController {
     return res.sendStatus(201)
   }
 
+  async show(req: Request<{ id: string }>, res: Response) {
+    const { id } = req.params
+
+    const post = await blogPostRepo.findOneBy({ id })
+
+    return res.json(post)
+  }
+
   async update(req: Request<{ id: string }, {}, BlogPostData>, res: Response) {
     const { id } = req.params
     const { title, imageUrl, content } = req.body
